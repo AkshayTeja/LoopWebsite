@@ -55,6 +55,74 @@ body{
         {
           box-shadow: 0 0 1px 1px white;
         }
+        .chart-heading {
+  font-family: "Rubik", sans-serif;
+  color: #023047;
+  text-transform: uppercase;
+  font-size: 24px;
+  text-align: center;
+}
+
+.chart-container {
+  width: 200px;
+}
+
+.programming-stats {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0 auto;
+  width: fit-content;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  padding: 8px 32px;
+  color: #ffffff;
+  transition: all 400ms ease;
+}
+
+.programming-stats:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 16px -7px rgba(0, 0, 0, 1);
+}
+
+.programming-stats .details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.programming-stats .details ul li {
+  font-size: 16px;
+  margin: 12px 0;
+  text-transform: uppercase;
+}
+
+.programming-stats .details .percentage {
+  font-weight: 700;
+  color: #8f00ff;
+}
+
+.btn
+{
+    background: none;
+    border: 2px solid #fff;
+    padding: 12px 20px;
+    min-width: 200px;
+    margin: 10px;
+    cursor: pointer;
+    transition: colour 0.4s linear;
+}
+
+.btn:hover{
+    color: #fff;
+}
+.footer
+{
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+
     </style>
 </head>
 <body style="background-color: black;">
@@ -87,30 +155,64 @@ body{
         </div>
       </nav>
 
-    <div class="container">
+        <div class="container">
+              <div class="d-block  justify-content-center align-items-center text-center m-5 pt-4 pb-5" data-aos="fade-right" data-aos-once="false">
+                <div class="mb-5">
+                    <h1 class="display-1 text-white">Join us in our journey of making the fifth-mode of transportation a reality!</h1>
+                </div>
+                <div class="mt-5">
+                    <div class="d-flex p-2 justify-content-center align-items-center title-text" style="background-color: #6f2da8;">
+                        <h1 class="display-2 text-white">Want to know how? Scroll below</h1>     
+                    </div> 
+                </div>                    
+              </div>    
 
-        <div>
-            <div class="container">
-              <div class="d-block  justify-content-center align-items-center text-center m-5 pt-4 pb-5" data-aos="fade-right">
-                  <h1 class="display-1 text-white ">Join us in our journey of making the fifth-mode of transportation a reality!</h1>
-                  <div class="p-3 mt-5 mb-3 text-center title-text" style="background-color: #6f2da8;width: fit-content;">
-                    <h3 class="text-white fw-bolder fs-2 ">Want to know how? Scroll below</h3>       
-                </div> 
+              <div class="mb-5" data-aos="fade-left" data-aos-once="false">
+                <h1 class="text-purple text-center mb-5 fw-bolder">CURRENT BUDGET BREAKDOWN</h1>
+                <div class="programming-stats">
+                    <div class="chart-container">
+                      <canvas class="my-chart"></canvas>
+                    </div>
+              
+                    <div class="details">
+                      <ul></ul>
+                    </div>
+                  </div>
+                <div class="mt-5 text-center">
+                    <h2 class="text-white fw-bolder">TOTAL : 000000</h2>
+                </div>
               </div>
-            </div> 
 
-                  <div data-aos="fade-left" data-aos-duration="1000" data-aos-once="false">
-                    <h1 class="text-purple text-center mb-5 mt-3 fw-bolder">THE BOARD</h1>
-                  </div>
-
-                  <div class="div" data-aos="fade-right">
-                    I am div 3
-                  </div>
-
-                  <div class="div"  data-aos="fade-up">
-                    I am div 4
-                  </div>
+              <div class="m-5" data-aos="fade-right" data-aos-once="false">
+                    <a href="index.html"><button class="btn btn-outline-purple"><h1 class="fw-bolder">SUPPORT US</h1></button></a>               
+              </div>
         </div>
+
+
+
+        <!--Footer-->
+      <div class="bg-dark footer mt-5">
+        <div class="d-flex align-items-center justify-content-center gap-3 p-3">
+          <div class="mt-2">
+            <h5 class="text-purple fw-bolder">Connect With Us :</h5>
+          </div>
+          <div>
+            <a href="https://linktr.ee/loopmanipal" target="_blank">
+              <img class="social-media" src="Assets/LinkTree.png" alt="LinkTree" style="width: 56px;height: 56px;">
+            </a>
+          </div>
+          <div>
+            <a href="https://www.instagram.com/loopmit/" target="_blank">
+              <img class="social-media" src="Assets/Instagram.png" alt="Instagram" style="width: 56px;height: 56px;">
+            </a>
+          </div>
+          <div>
+            <a href="https://www.linkedin.com/company/loopmit" target="_blank">
+              <img  src="Assets/LinkedIn.png" alt="LinkedIn" style="width: 56px;height: 56px;">
+            </a>
+          </div>
+        </div>
+      </div>
 
             <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
             <script>
@@ -119,6 +221,52 @@ body{
                 once: true,
               });
             </script>
-    
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!--Piechart-->
+        <script>
+            const chartData = {
+            labels: ["Mechanical", "Mechanical", "Mechanical", "Mechanical", "Mechanical"],
+            data: [30, 17, 10, 7, 36],
+            };
+
+            const myChart = document.querySelector(".my-chart");
+            const ul = document.querySelector(".programming-stats .details ul");
+
+            new Chart(myChart, {
+            type: "doughnut",
+            data: {
+                labels: chartData.labels,
+                datasets: [
+                {
+                    label: "Breakdown",
+                    data: chartData.data,
+                },
+                ],
+            },
+            options: {
+                borderWidth: 10,
+                borderRadius: 2,
+                hoverBorderWidth: 0,
+                plugins: {
+                legend: {
+                    display: false,
+                },
+                },
+            },
+            });
+
+            const populateUl = () => {
+            chartData.labels.forEach((l, i) => {
+                let li = document.createElement("li");
+                li.innerHTML = `${l}: <span class='percentage'>${chartData.data[i]}%</span>`;
+                ul.appendChild(li);
+            });
+            };
+
+            populateUl();
+                    </script>
+                
 </body>
 </html>
