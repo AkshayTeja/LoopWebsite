@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lora&family=Press+Start+2P&family=Rubik:wght@300&display=swap" rel="stylesheet">
     <title>LoopMIT</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <style>
       *
       {
@@ -166,8 +167,8 @@
       
       <!--Board-->
         <div class="container pb-5">..
-          <h1 class="text-purple text-center mb-5 mt-3 fw-bolder">THE BOARD</h1>
-          <div class="row justify-content-center align-items-center mb-5">
+          <h1 class="text-purple text-center mb-5 mt-3 fw-bolder" data-aos="fade-left" data-aos-once="false">THE BOARD</h1>
+          <div class="row justify-content-center align-items-center mb-5" data-aos="fade-right" data-aos-once="false">
             <div class="col-md-3 col-sm-6 col-xs-12 ">
               <div class="single-team border border-purple">
                 <div class="img-area">
@@ -203,7 +204,7 @@
             </div>
           </div>  
 
-          <div class="row justify-content-center align-items-center">
+          <div class="row justify-content-center align-items-center" data-aos="fade-left" data-aos-once="false">
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="single-team border border-purple">
                 <div class="img-area">
@@ -275,8 +276,8 @@
         <!--Members-->
         <div style="background-color: #6f2da8;" class="p-1">..
           <div class="container">
-            <h1 class="text-white text-center mb-5 mt-3 fw-bolder">THE MEMBERS</h1>
-            <div class="row justify-content-center ">
+            <h1 class="text-white text-center mb-5 mt-3 fw-bolder" data-aos="fade-right" data-aos-once="false">THE MEMBERS</h1>
+            <div class="row justify-content-center" data-aos="fade-left" data-aos-once="false">
               <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="single-team border border-white">
                   <div class="img-area">
@@ -347,7 +348,7 @@
           </div>      
 
         <div class="container">
-          <div class="row justify-content-center mt-5 mb-5">
+          <div class="row justify-content-center mt-5 mb-5" data-aos="fade-right" data-aos-once="false">
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="single-team border border-white">
                 <div class="img-area">
@@ -423,8 +424,8 @@
 
       <!--Ex-Board-->
       <div class="container">
-        <h1 class="text-purple text-center mb-5 mt-4 fw-bolder">THE EX-BOARD</h1>
-        <div class="row justify-content-center mb-5">
+        <h1 class="text-purple text-center mb-5 mt-4 fw-bolder" data-aos="fade-left" data-aos-once="false">THE EX-BOARD</h1>
+        <div class="row justify-content-center mb-5" data-aos="fade-right" data-aos-once="false">
           <div class="col-md-3 col-sm-6 col-xs-12">
             <div class="single-team  border border-purple">
               <div class="img-area">
@@ -516,5 +517,13 @@
           </div>
         </div>
       </div>
+
+      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+              AOS.init({
+                duration: 1500,
+                once: true,
+              });
+            </script>
 </body>
 </html>
